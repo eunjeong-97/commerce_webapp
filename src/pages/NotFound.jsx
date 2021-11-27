@@ -7,13 +7,13 @@ const NotFound = () => {
       <h1>404 Not Found</h1>
       <h1>아래 페이지로 이동하시오</h1>
       <li>
-        <Link to="/">ProductList</Link>
+        <Link to="">ProductList</Link>
       </li>
       <li>
-        <Link to="../productDetail">ProductDetail</Link>
+        <Link to="/productDetail">ProductDetail</Link>
       </li>
       <li>
-        <Link to="../cart">Cart</Link>
+        <Link to="/cart">Cart</Link>
       </li>
     </div>
   );

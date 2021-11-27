@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Router basename="/commerce_webapp">
         <Routes>
-          <Route path="/" element={<ProductList />} />
+          <Route path="" element={<ProductList />} />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
