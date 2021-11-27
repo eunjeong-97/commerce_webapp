@@ -5,7 +5,7 @@ const Cart = props => {
   return (
     <div className="Cart">
       <li>
-        <Link to="">ProductList</Link>
+        <Link to="/">ProductList</Link>
       </li>
       <li>
         <Link to="/productDetail">ProductDetail</Link>

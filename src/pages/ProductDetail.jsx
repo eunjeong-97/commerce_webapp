@@ -5,7 +5,7 @@ const ProductDetail = props => {
   return (
     <div className="ProductDetail">
       <li>
-        <Link to="">ProductList</Link>
+        <Link to="/">ProductList</Link>
       </li>
       <li>
         <Link to="/productDetail">ProductDetail</Link>
