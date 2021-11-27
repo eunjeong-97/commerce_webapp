@@ -1,8 +1,8 @@
 {
-  "homepage": "https://eunjeong-97.github.io/commerce_webapp_211126/",
-  "name": "commerce_webapp_211126",
+  "homepage": "https://eunjeong-97.github.io/commerce_webapp",
+  "name": "commerce_webapp",
   "version": "0.1.0",
-  "private": true,
+  "public": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

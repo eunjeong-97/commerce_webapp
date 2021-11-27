@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/commerce_webapp">
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/productDetail" element={<ProductDetail />} />
