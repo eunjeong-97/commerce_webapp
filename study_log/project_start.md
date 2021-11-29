@@ -3,14 +3,13 @@
 ## 목차
 
 1. [필요한 라이브러리 설치](#1-필요한-라이브러리-설치)
-2. [React 초기세팅 진행](#2-필요한-라이브러리-설치)
+2. [React 초기세팅 진행](#2-react-초기세팅-진행)
 3. [초기세팅 이외의 폴더 및 내용 파일추가](#3-초기세팅-이외의-폴더-및-내용-파일추가)
 4. [React 프로젝트 실행](#4-react-프로젝트-실행)
 5. [Github Repository 연결 및 업데이트](#5-github-repository-연결-및-업데이트)
-6. [Github 배포 관련](#6-github-배포-관련)
-7. [참고내용](#7-참고내용)
+6. [참고내용](#6-참고내용)
 
-## 1. 필요한 라이브러리 설치
+## 1. CRA 및 필요한 라이브러리 설치
 
 ```
 $ npx create-react-app 프로젝트명
@@ -483,103 +482,11 @@ $ git push origin main
 
 > [목차로 이동](#목차)
 
-## 6. Github Page 배포
-
-### 6-1. Github Page URL
-
-#### 생성
-
-- github repository 메뉴바의 왼쪽의 `settings` > `Pages` 탭으로 이동,
-- `Source` 항목에서 일단 `main branch` 에서 배포하는 걸로 설정하고 `Save` 버튼
-- Your site is published at `URL` 영역 확인
-
-<img src='./github_publish.png' />
-
-#### package.json homepage 속성 추가
-
-- `package.json` 파일의 `name` 속성 위쪽에 `"homepage": {}` 입력
-
-### 6-2. gh-pages branch
-
-```
-$ npm run build
-$ npm install -g serve
-$ npm install -D gh-pages
-```
-
-- github repository branch 에서 `gh-pages` branch 생성된거 확인
-- `Source` 항목에서 `gh-pages` branch 로 배포한다고 수정
-- 사이트에서 접속할 때 url의 path 맨 끝에 `index.html` 추가
-
-```
-https://eunjeong-97.github.io/commerce_webapp_211126/index.html
-```
-
-### 6-3. package.json 배포명령어 추가
-
-- gh-pages 세팅
-- `"deploy": "gh-pages -d build"`: React를 Build해서 생성되는 결과 폴더는 build라고 배포 명령어를 입력한다
-
-```json
-"scripts": {
-    "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-
-"homepage": “url” // 제일 상단, github 배포
-
-```
-
-### 6-4. `.github/workflow/gh-pages.yml` 생성
-
-- github action 추가
-- `publish_dir: ./bulid`: 여기서 build 혹은 dist를 입력하면 되는데 package.json의 `"deploy": "gh-pages -d build"`에 맞춰서 적어주면 된다.
-
-```yml
-name: github pages
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2.1.2
-        with:
-          node-version: '12.x'
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - run: npm ci
-      - run: npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./bulid
-```
-
-> [목차로 이동](#목차)
-
-## 7. 참고내용
+## 6. 참고내용
 
 - [Github Page 배포하기](https://velog.io/@byjihye/react-github-pages)
 - [Github Page gh-pages 자동 업데이트](https://davidyang2149.dev/front-end/github-actions%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-gh-pages-%EC%9E%90%EB%8F%99-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/)
-- [Github Page에 React APP(SPA) 호스팅 하기](https://iamsjy17.github.io/react/2018/11/04/githubpage-SPA.html)
+- [Github Page에 React APP(SPA) 호스팅하기](https://iamsjy17.github.io/react/2018/11/04/githubpage-SPA.html)
 - [React 프로젝트 초기세팅 설명](https://velog.io/@beanlove97/React-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%B4%88%EA%B8%B0%EC%84%B8%ED%8C%85-%EB%B3%B5%EC%8A%B5#react-router-dom%EC%9D%B4-%EB%B2%84%EC%A0%84-6%EC%9C%BC%EB%A1%9C-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C)
 - [ESLint 및 Prettier 관련 내용](https://velog.io/@beanlove97/ESLint-Prettier)
 
