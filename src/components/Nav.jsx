@@ -22,7 +22,6 @@ const NavLayout = styled.div`
   height: 64px;
   margin: auto;
   border-bottom: 1px solid #eeeeee;
-  background-color: tomato;
 `;
 
 export default Nav;

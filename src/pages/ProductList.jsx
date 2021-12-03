@@ -22,9 +22,10 @@ const ProductList = props => {
       .then(response => setProductList(response.data.results));
   };
 
-  useEffect(getPopularTheme, []);
-
-  console.log(productList);
+  useEffect(() => {
+    getPopularTheme();
+    getProcuctList(0);
+  }, []);
 
   return (
     <Whole>
@@ -40,7 +41,9 @@ const ProductList = props => {
                 return (
                   <SliderItemBox
                     key={popularThemeIndex}
-                    onClick={getProcuctList(popularThemeIndex)}
+                    onClick={() => {
+                      getProcuctList(popularThemeIndex);
+                    }}
                     style={{
                       background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(${popularTheme.theme_thumbnail})`,
@@ -53,7 +56,13 @@ const ProductList = props => {
             </SliderWholeBox>
           )}
         </ThemeListBox>
-        <ProductItem />
+
+        {productList.length > 0 &&
+          productList.map((productItem, productItemIndex) => {
+            return (
+              <ProductItem key={productItemIndex} productItem={productItem} />
+            );
+          })}
       </ProductListBox>
     </Whole>
   );
@@ -61,12 +70,10 @@ const ProductList = props => {
 
 const Whole = styled.div`
   width: 390px;
-  background-color: wheat;
 `;
 
 const ProductListBox = styled.div`
   margin: 0 24px 52px 24px;
-  background-color: teal;
 `;
 const ThemeTitleBox = styled.div`
   margin: 27px 0 15px 0;
