@@ -1,5 +1,16 @@
 # Github Page Deploy
 
+## 목차
+
+- [1. Github Page URL](#1-github-page-url)
+  - [1-1. Github Page URL생성](#1-1-github-page-url생성)
+  - [1-2. package.json homepage 속성 추가](#1-2-packagejson-homepage-속성-추가)
+- [2. gh-pages 환경(branch) 생성](#2-gh-pages-환경branch-생성)
+- [3. package.json 배포명령어 추가](#3-packagejson-배포명령어-추가)
+- [4. `.github/workflow/gh-pages.yml` 생성](#4-githubworkflowgh-pagesyml-생성)
+- [5. index.html head영역에 내용추가](#5-indexhtml-head영역에-내용추가)
+- [6. 참고자료](#6-참고자료)
+
 ## 1. Github Page URL
 
 ### 1-1. Github Page URL생성
@@ -133,3 +144,7 @@ jobs:
   <!-- End Single Page Apps for GitHub Pages -->
 </head>
 ```
+
+## 6. 참고자료
+
+- [GitHub Pages에 React App(SPA) 호스팅 하기](https://iamsjy17.github.io/react/2018/11/04/githubpage-SPA.html)
