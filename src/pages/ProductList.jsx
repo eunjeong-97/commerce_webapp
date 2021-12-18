@@ -16,15 +16,15 @@ const ProductList = props => {
       .then(response => setPopularThemeArray(response.data.results));
   };
 
-  const getProcuctList = themeIndex => {
+  const getProcuctList = themeId => {
     axios
-      .get(`${url}/theme/${themeIndex + 1}/products`)
+      .get(`${url}/theme/${themeId}/products`)
       .then(response => setProductList(response.data.results));
   };
 
   useEffect(() => {
     getPopularTheme();
-    getProcuctList(0);
+    getProcuctList(1);
   }, []);
 
   return (
@@ -42,7 +42,7 @@ const ProductList = props => {
                   <SliderItemBox
                     key={popularThemeIndex}
                     onClick={() => {
-                      getProcuctList(popularThemeIndex);
+                      getProcuctList(popularTheme.theme_id);
                     }}
                     style={{
                       background: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
