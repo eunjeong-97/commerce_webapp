@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import ProductList from './pages/ProductList';
-import ProductDetail from './pages/ProductDetail';
-import Cart from './pages/Cart';
-import NotFound from './pages/NotFound';
+import ProductList from './pages/ProductList'
+import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart'
+import NotFound from './pages/NotFound'
 
 class App extends Component {
   render() {
@@ -17,8 +17,8 @@ class App extends Component {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App

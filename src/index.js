@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { ThemeProvider } from 'styled-components'
 
-import GlobalStyles from './styles/GlobalSyles';
-import App from './App';
-import theme from './styles/theme';
+import GlobalStyles from './styles/GlobalSyles'
+import App from './App'
+import theme from './styles/theme'
 
 ReactDOM.render(
   <>
@@ -14,4 +14,4 @@ ReactDOM.render(
     </ThemeProvider>
   </>,
   document.getElementById('root')
-);
+)

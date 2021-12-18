@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Cart = props => {
   return (
@@ -15,7 +15,7 @@ const Cart = props => {
       </li>
       <p>Current Page is Cart</p>
     </div>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

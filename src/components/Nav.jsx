@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
-import TItle from './TItle';
+import TItle from './TItle'
 
 const Nav = props => {
   return (
@@ -11,8 +11,8 @@ const Nav = props => {
         <TItle text="코멘토 쇼핑" />
       </Link>
     </NavLayout>
-  );
-};
+  )
+}
 
 const NavLayout = styled.div`
   display: flex;
@@ -22,6 +22,6 @@ const NavLayout = styled.div`
   height: 64px;
   margin: auto;
   border-bottom: 1px solid #eeeeee;
-`;
+`
 
-export default Nav;
+export default Nav

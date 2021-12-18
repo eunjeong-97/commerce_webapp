@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
+import axios from 'axios'
+import dotenv from 'dotenv'
 
-import Nav from '../components/Nav';
-import { url } from '../apis/config';
+import Nav from '../components/Nav'
 
 const ProductDetail = props => {
-  const [productDetail, setProductDetail] = useState({});
-
+  const [productDetail, setProductDetail] = useState({})
+  dotenv.config()
   function getProductDetail() {
     axios
-      .get(`${url}product/1`)
-      .then(response => setProductDetail(response.data.results));
+      .get(`${process.env.REACT_APP_COMMERCE_SERVER_URL}product/1`)
+      .then(response => setProductDetail(response.data.results))
   }
 
-  useEffect(getProductDetail, []);
-  console.log(productDetail);
+  useEffect(getProductDetail, [])
+  console.log(productDetail)
 
   return (
     // <div className="ProductDetail">
@@ -33,11 +33,11 @@ const ProductDetail = props => {
     <ProductDetailBox>
       <Nav />
     </ProductDetailBox>
-  );
-};
+  )
+}
 
 const ProductDetailBox = styled.div`
   width: 390px;
-`;
+`
 
-export default ProductDetail;
+export default ProductDetail
