@@ -412,8 +412,9 @@ input {
       "error",
       {
         "endOfLine": "auto",
-        "singleQuote": true, // 홑따옴표로 지정
-        "semi": false // 세미콜론제거
+        "singleQuote": true,
+        "jsxSingleQuote": true,
+        "semi": false
       }
     ]
   }
@@ -430,6 +431,7 @@ input {
   "endOfLine": "lf",
   "arrowParens": "avoid",
   "singleQuote": true,
+  "jsxSingleQuote": true,
   "semi": false
 }
 ```
